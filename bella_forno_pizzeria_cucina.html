@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bella Forno - Artisanal Pizzeria & Cucina</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#fbf9f5",
+            "surface-dim": "#dbdad6",
+            "surface-bright": "#fbf9f5",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f5f3ef",
+            "surface-container": "#efeeea",
+            "surface-container-high": "#eae8e4",
+            "surface-container-highest": "#e4e2de",
+            "on-surface": "#1b1c1a",
+            "on-surface-variant": "#424842",
+            "inverse-surface": "#30312e",
+            "inverse-on-surface": "#f2f0ed",
+            "outline": "#727971",
+            "outline-variant": "#c1c8c0",
+            "surface-tint": "#41674b",
+            "primary": "#163c24",
+            "on-primary": "#ffffff",
+            "primary-container": "#2e5339",
+            "on-primary-container": "#9cc5a4",
+            "inverse-primary": "#a7d1af",
+            "secondary": "#b32820",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#fd5d4e",
+            "on-secondary-container": "#610003",
+            "tertiary": "#4e2d00",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#6d4100",
+            "on-tertiary-container": "#fea93e",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#c2edca",
+            "primary-fixed-dim": "#a7d1af",
+            "on-primary-fixed": "#00210e",
+            "on-primary-fixed-variant": "#294e35",
+            "secondary-fixed": "#ffdad5",
+            "secondary-fixed-dim": "#ffb4aa",
+            "on-secondary-fixed": "#410001",
+            "tertiary-fixed": "#ffddbb",
+            "tertiary-fixed-dim": "#ffb867",
+            "on-tertiary-fixed": "#2b1700",
+            "background": "#fbf9f5",
+            "on-background": "#1b1c1a",
+            "surface-variant": "#e4e2de"
+          },
+          fontFamily: {
+            serif: ["Noto Serif", "serif"],
+            sans: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Manrope', sans-serif;
+        background-color: #fbf9f5;
+        color: #1b1c1a;
+      }
+      h1, h2, h3, .font-serif {
+        font-family: 'Noto Serif', serif;
+      }
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f5f3ef;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c1c8c0;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #727971;
+    }
+    .badge-pulse {
+      animation: pulseGlow 2s infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.08); }
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary/20">
+
+  <!-- TOP HEADER -->
+  <header class="fixed top-0 w-full z-40 bg-surface/90 backdrop-blur-md border-b border-surface-container-high transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="#" onclick="switchTab('menu')" class="flex items-center gap-3 group focus:outline-none">
+        <svg class="h-10 w-auto text-primary transition-transform group-hover:scale-105" viewBox="0 0 160 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(2, 2)">
+            <circle cx="20" cy="20" r="18" fill="#C8372D"/>
+            <path d="M20 6 C24 6 28 8 30 11 L20 20 Z" fill="#F5A623"/>
+            <circle cx="16" cy="15" r="2.5" fill="#8E1B13"/>
+            <circle cx="24" cy="23" r="2" fill="#8E1B13"/>
+            <circle cx="15" cy="25" r="2.2" fill="#8E1B13"/>
+            <circle cx="20" cy="20" r="18" stroke="#E8972C" stroke-width="2.5" stroke-dasharray="3 3"/>
+            <path d="M12 28 C15 31 25 31 28 28" stroke="#FAF6EE" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="18" cy="12" r="1" fill="#2E5339"/>
+            <circle cx="22" cy="17" r="1.2" fill="#2E5339"/>
+          </g>
+          <text x="48" y="24" font-family="'Noto Serif', serif" font-size="16" font-weight="bold" fill="#1C1917" letter-spacing="0.5">BELLA FORNO</text>
+          <text x="48.5" y="37" font-family="'Manrope', sans-serif" font-size="8" font-weight="700" fill="#C8372D" letter-spacing="2">PIZZERIA &amp; CUCINA</text>
+        </svg>
+      </a>
+
+      <!-- Kitchen Status Badge -->
+      <div class="hidden md:flex items-center gap-3 px-3 py-1.5 bg-surface-container-low rounded-lg border border-surface-container-high">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 badge-pulse"></span>
+        <div class="flex flex-col text-xs">
+          <span class="text-on-surface-variant font-medium">Wood-Fired Brick Oven</span>
+          <span class="font-bold text-primary">Pickup Ready: 20–25 Mins</span>
+        </div>
+      </div>
+
+      <nav class="flex items-center gap-1 bg-surface-container-low p-1 rounded-xl border border-surface-container">
+        <button id="nav-btn-menu" onclick="switchTab('menu')" class="flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all bg-primary text-on-primary shadow-sm">
+          <span>1.</span>
+          <span>Menu &amp; Order</span>
+        </button>
+        <button id="nav-btn-checkout" onclick="switchTab('checkout')" class="flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all text-on-surface-variant hover:text-primary hover:bg-surface-container-high">
+          <span>2.</span>
+          <span>Ready to Pay</span>
+          <span id="nav-cart-badge" class="hidden ml-1 px-1.5 py-0.5 text-xs rounded-full bg-secondary text-white font-mono">0</span>
+        </button>
+      </nav>
+
+      <!-- Action & Mobile Cart Trigger -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleAssistanceModal()" class="hidden lg:flex items-center gap-1.5 px-3 py-2 bg-surface-container-low hover:bg-surface-container-high text-primary rounded-lg text-xs font-semibold transition-colors">
+          <span class="material-symbols-outlined text-[18px]">support_agent</span>
+          <span>Help</span>
+        </button>
+        
+        <!-- Mobile Cart Button -->
+        <button onclick="toggleMobileCart(true)" class="lg:hidden relative p-2.5 bg-primary text-on-primary rounded-lg shadow-sm">
+          <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          <span id="mobile-cart-badge" class="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-white text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="flex-1 pt-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+
+    <!-- VIEW 1: MENU & ORDERING -->
+    <div id="view-menu" class="space-y-8 animate-fadeIn">
+
+      <!-- Editorial Hero Banner -->
+      <section class="mt-4 bg-gradient-to-r from-surface-container-low via-surface-container to-surface-container-low rounded-2xl p-6 sm:p-8 border border-surface-container-high relative overflow-hidden shadow-xs">
+        <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="max-w-2xl relative z-10 space-y-3">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-secondary/10 text-secondary font-semibold text-xs uppercase tracking-wider">
+            <span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+            <span>Hand-Stretched Sourdough • Baked at 800°F</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl font-bold font-serif text-primary tracking-tight">Artisanal Neapolitan Pizza</h1>
+          <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
+            Crafted with imported Italian DOP San Marzano tomatoes, fresh Fior di Latte mozzarella, and fermented for 48 hours. Select your favorites below.
+          </p>
+        </div>
+      </section>
+
+      <div class="sticky top-20 z-30 bg-surface/95 backdrop-blur-md py-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-surface-container-high">
+        
+        <!-- Category Filter Pills -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+          <button onclick="filterCategory('all')" id="cat-all" class="cat-pill active px-4 py-2 rounded-lg text-xs font-bold whitespace-nowrap bg-primary text-on-primary shadow-xs transition-all">
+            All Items
+          </button>
+          <button onclick="filterCategory('pizza')" id="cat-pizza" class="cat-pill px-4 py-2 rounded-lg text-xs font-bold whitespace-nowrap bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-all">
+            Handcrafted Pizzas
+          </button>
+          <button onclick="filterCategory('sides')" id="cat-sides" class="cat-pill px-4 py-2 rounded-lg text-xs font-bold whitespace-nowrap bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-all">
+            Artisanal Sides
+          </button>
+          <button onclick="filterCategory('drinks')" id="cat-drinks" class="cat-pill px-4 py-2 rounded-lg text-xs font-bold whitespace-nowrap bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-all">
+            Beverages &amp; Wine
+          </button>
+          <button onclick="filterCategory('dessert')" id="cat-dessert" class="cat-pill px-4 py-2 rounded-lg text-xs font-bold whitespace-nowrap bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-all">
+            Dolci &amp; Desserts
+          </button>
+        </div>
+
+        <!-- Live Search Field -->
+        <div class="relative min-w-[220px]">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+          <input type="text" id="menu-search" oninput="handleSearch()" placeholder="Search ingredients or items..." class="w-full pl-9 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg text-xs focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary shadow-2xs transition-all"/>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Menu List (8 cols) -->
+        <div class="lg:col-span-8 space-y-10" id="menu-container">
+          
+          <!-- PIZZAS CATEGORY -->
+          <section id="section-pizza" class="menu-section space-y-4">
+            <div class="flex items-center justify-between border-b border-surface-container pb-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-6 bg-secondary rounded-full"></span>
+                <h2 class="text-xl font-bold font-serif text-primary">Handcrafted Wood-Fired Pizzas</h2>
+              </div>
+              <span class="text-xs text-on-surface-variant font-medium">Neapolitan 12"–16"</span>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-4" id="grid-pizza">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </section>
+
+          <!-- SIDES CATEGORY -->
+          <section id="section-sides" class="menu-section space-y-4">
+            <div class="flex items-center justify-between border-b border-surface-container pb-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-6 bg-tertiary-container rounded-full"></span>
+                <h2 class="text-xl font-bold font-serif text-primary">Artisanal Sides &amp; Starters</h2>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="grid-sides">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </section>
+
+          <!-- DRINKS CATEGORY -->
+          <section id="section-drinks" class="menu-section space-y-4">
+            <div class="flex items-center justify-between border-b border-surface-container pb-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-6 bg-primary rounded-full"></span>
+                <h2 class="text-xl font-bold font-serif text-primary">Beverages &amp; Wine</h2>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="grid-drinks">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </section>
+
+          <!-- DESSERT CATEGORY -->
+          <section id="section-dessert" class="menu-section space-y-4">
+            <div class="flex items-center justify-between border-b border-surface-container pb-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-6 bg-secondary-container rounded-full"></span>
+                <h2 class="text-xl font-bold font-serif text-primary">Dolci (Desserts)</h2>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="grid-dessert">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="hidden lg:block lg:col-span-4 sticky top-28 space-y-4">
+          <div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-5 shadow-sm space-y-4">
+            <div class="flex items-center justify-between border-b border-surface-container pb-3">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">shopping_basket</span>
+                <h3 class="font-serif font-bold text-lg text-primary">Your Order Tray</h3>
+              </div>
+              <span id="tray-item-count" class="text-xs font-bold px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">0 items</span>
+            </div>
+
+            <!-- Order Type Toggle (Pickup / Delivery) -->
+            <div class="grid grid-cols-2 p-1 bg-surface-container-low rounded-lg text-xs font-semibold">
+              <button onclick="setOrderType('pickup')" id="opt-pickup" class="py-1.5 rounded-md text-center transition-all bg-primary text-on-primary shadow-2xs">
+                Pickup
+              </button>
+              <button onclick="setOrderType('delivery')" id="opt-delivery" class="py-1.5 rounded-md text-center transition-all text-on-surface-variant hover:text-primary">
+                Delivery (+$3.99)
+              </button>
+            </div>
+
+            <!-- Tray Items Container -->
+            <div id="tray-items-list" class="max-h-[340px] overflow-y-auto space-y-3 pr-1 divide-y divide-surface-container">
+              <!-- Empty state -->
+              <div id="tray-empty-state" class="py-8 text-center space-y-2">
+                <span class="material-symbols-outlined text-4xl text-outline-variant">local_pizza</span>
+                <p class="text-xs text-on-surface-variant">Your tray is currently empty.<br/>Select items from the menu to start!</p>
+              </div>
+            </div>
+
+            <!-- Pricing Calculation Breakdown -->
+            <div class="border-t border-surface-container pt-3 space-y-2 text-xs">
+              <div class="flex justify-between text-on-surface-variant">
+                <span>Subtotal</span>
+                <span id="subtotal-val" class="font-mono">$0.00</span>
+              </div>
+              <div id="delivery-fee-row" class="hidden justify-between text-on-surface-variant">
+                <span>Delivery Fee</span>
+                <span id="delivery-val" class="font-mono">$3.99</span>
+              </div>
+              <div class="flex justify-between text-on-surface-variant">
+                <span>Est. Taxes (8.875%)</span>
+                <span id="tax-val" class="font-mono">$0.00</span>
+              </div>
+              <div class="flex justify-between text-base font-bold text-primary border-t border-surface-container-high pt-2">
+                <span>Total</span>
+                <span id="total-val" class="font-mono">$0.00</span>
+              </div>
+            </div>
+
+            <!-- Checkout CTA Button -->
+            <button onclick="switchTab('checkout')" id="checkout-cta-btn" disabled class="w-full py-3 bg-primary hover:bg-primary-container disabled:bg-surface-container-high disabled:text-outline text-on-primary font-bold text-sm rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm">
+              <span>Proceed to Checkout</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </button>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+    <div id="view-checkout" class="hidden space-y-8 animate-fadeIn">
+      
+      <div class="border-b border-surface-container pb-4 flex items-center justify-between">
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold font-serif text-primary">Review &amp; Pay</h1>
+          <p class="text-xs sm:text-sm text-on-surface-variant">Finalize your contact details and payment method</p>
+        </div>
+        <button onclick="switchTab('menu')" class="px-3 py-1.5 bg-surface-container hover:bg-surface-container-high text-xs font-semibold rounded-lg text-primary flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+          <span>Back to Menu</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Checkout Form (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Contact Details Card -->
+          <div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-5 space-y-4 shadow-2xs">
+            <h3 class="font-serif font-bold text-base text-primary flex items-center gap-2">
+              <span class="material-symbols-outlined text-[20px]">person</span>
+              <span>1. Contact &amp; Order Details</span>
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div>
+                <label class="block font-semibold text-on-surface-variant mb-1">First Name *</label>
+                <input type="text" id="cust-first" value="Marco" class="w-full px-3 py-2 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:border-primary text-xs"/>
+              </div>
+              <div>
+                <label class="block font-semibold text-on-surface-variant mb-1">Last Name *</label>
+                <input type="text" id="cust-last" value="Rossi" class="w-full px-3 py-2 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:border-primary text-xs"/>
+              </div>
+              <div>
+                <label class="block font-semibold text-on-surface-variant mb-1">Phone Number *</label>
+                <input type="tel" id="cust-phone" value="(555) 234-5678" class="w-full px-3 py-2 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:border-primary text-xs"/>
+              </div>
+              <div>
+                <label class="block font-semibold text-on-surface-variant mb-1">Email Address *</label>
+                <input type="email" id="cust-email" value="m.rossi@example.com" class="w-full px-3 py-2 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:border-primary text-xs"/>
+              </div>
+            </div>
+
+            <!-- Delivery Address Field (if delivery chosen) -->
+            <div id="checkout-address-block" class="hidden space-y-2 border-t border-surface-container pt-3">
+              <label class="block font-semibold text-xs text-on-surface-variant">Delivery Street Address *</label>
+              <input type="text" id="cust-address" placeholder="123 Trattoria Way, Apt 4B" class="w-full px-3 py-2 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:border-primary text-xs"/>
+            </div>
+          </div>
+
+          <div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-5 space-y-4 shadow-2xs">
+            <h3 class="font-serif font-bold text-base text-primary flex items-center gap-2">
+              <span class="material-symbols-outlined text-[20px]">payments</span>
+              <span>2. Select Payment Method</span>
+            </h3>
+
+            <div class="grid grid-cols-3 gap-3">
+              <button type="button" onclick="selectPayMethod('card')" id="pay-card" class="pay-method-btn p-3 border-2 border-primary bg-primary/5 rounded-lg flex flex-col items-center gap-1.5 text-xs font-bold text-primary transition-all">
+                <span class="material-symbols-outlined text-xl">credit_card</span>
+                <span>Credit Card</span>
+              </button>
+              <button type="button" onclick="selectPayMethod('apple')" id="pay-apple" class="pay-method-btn p-3 border border-outline-variant bg-surface-container-low rounded-lg flex flex-col items-center gap-1.5 text-xs font-semibold text-on-surface-variant transition-all">
+                <span class="material-symbols-outlined text-xl">apple</span>
+                <span>Apple Pay</span>
+              </button>
+              <button type="button" onclick="selectPayMethod('cash')" id="pay-cash" class="pay-method-btn p-3 border border-outline-variant bg-surface-container-low rounded-lg flex flex-col items-center gap-1.5 text-xs font-semibold text-on-surface-variant transition-all">
+                <span class="material-symbols-outlined text-xl">local_atm</span>
+                <span>Pay at Counter</span>
+              </button>
+            </div>
+
+            <!-- Card Inputs -->
+            <div id="card-fields" class="space-y-3 pt-2 text-xs">
+              <div>
+                <label class="block font-semibold text-on-surface-variant mb-1">Card Number</label>
+                <input type="text" value="•••• •••• •••• 4242" class="w-full px-3 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-mono focus:outline-none focus:border-primary text-xs"/>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-semibold text-on-surface-variant mb-1">Expiry Date</label>
+                  <input type="text" value="12 / 28" class="w-full px-3 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-mono focus:outline-none focus:border-primary text-xs"/>
+                </div>
+                <div>
+                  <label class="block font-semibold text-on-surface-variant mb-1">CVC Code</label>
+                  <input type="text" value="888" class="w-full px-3 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-mono focus:outline-none focus:border-primary text-xs"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Special Kitchen Instructions -->
+          <div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-5 space-y-2 shadow-2xs">
+            <label class="block font-serif font-bold text-sm text-primary">Kitchen Notes &amp; Requests</label>
+            <textarea id="order-notes" rows="2" placeholder="E.g., Please cut into 8 slices, extra crispy crust..." class="w-full px-3 py-2 bg-surface-container-low border border-outline-variant rounded-lg text-xs focus:outline-none focus:border-primary"></textarea>
+          </div>
+
+        </div>
+
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-5 shadow-sm space-y-4">
+            <h3 class="font-serif font-bold text-lg text-primary border-b border-surface-container pb-2">Order Summary</h3>
+            
+            <div id="checkout-summary-list" class="max-h-[280px] overflow-y-auto divide-y divide-surface-container pr-1 text-xs space-y-2">
+              <!-- Populated dynamically -->
+            </div>
+
+            <!-- Tip Selection -->
+            <div class="border-t border-surface-container pt-3 space-y-2">
+              <span class="block text-xs font-semibold text-on-surface-variant">Add Tip for Kitchen Staff:</span>
+              <div class="grid grid-cols-4 gap-2 text-xs">
+                <button onclick="setTip(15)" id="tip-15" class="tip-btn py-1.5 border border-outline-variant rounded-lg font-bold text-on-surface-variant hover:border-primary">15%</button>
+                <button onclick="setTip(18)" id="tip-18" class="tip-btn py-1.5 border-2 border-primary bg-primary/5 rounded-lg font-bold text-primary">18%</button>
+                <button onclick="setTip(20)" id="tip-20" class="tip-btn py-1.5 border border-outline-variant rounded-lg font-bold text-on-surface-variant hover:border-primary">20%</button>
+                <button onclick="setTip(0)" id="tip-0" class="tip-btn py-1.5 border border-outline-variant rounded-lg font-bold text-on-surface-variant hover:border-primary">Custom/None</button>
+              </div>
+            </div>
+
+            <!-- Final Calculation -->
+            <div class="border-t border-surface-container pt-3 space-y-2 text-xs">
+              <div class="flex justify-between text-on-surface-variant">
+                <span>Food &amp; Beverage</span>
+                <span id="chk-subtotal">$0.00</span>
+              </div>
+              <div class="flex justify-between text-on-surface-variant">
+                <span>Kitchen Tip</span>
+                <span id="chk-tip">$0.00</span>
+              </div>
+              <div class="flex justify-between text-on-surface-variant">
+                <span>Taxes &amp; Fees</span>
+                <span id="chk-tax">$0.00</span>
+              </div>
+              <div class="flex justify-between text-base font-bold text-primary border-t border-surface-container-high pt-2">
+                <span>Grand Total</span>
+                <span id="chk-grand-total" class="font-mono text-lg text-secondary">$0.00</span>
+              </div>
+            </div>
+
+            <!-- Submit Order CTA -->
+            <button onclick="submitOrder()" class="w-full py-3.5 bg-secondary hover:bg-secondary/90 text-on-secondary font-bold text-sm rounded-lg transition-all shadow-md flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+              <span>Place Wood-Fired Order</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <div id="mobile-cart-bar" class="lg:hidden fixed bottom-0 inset-x-0 z-30 p-3 bg-surface-container-lowest/95 backdrop-blur-md border-t border-surface-container-high shadow-lg flex items-center justify-between">
+    <div class="flex flex-col">
+      <span class="text-[10px] text-on-surface-variant uppercase tracking-wider font-bold">Tray Total</span>
+      <span id="mobile-bar-total" class="font-mono font-bold text-primary text-base">$0.00</span>
+    </div>
+    <button onclick="toggleMobileCart(true)" class="px-5 py-2.5 bg-primary text-on-primary rounded-lg font-bold text-xs flex items-center gap-2">
+      <span>View Order Tray</span>
+      <span id="mobile-bar-count" class="px-1.5 py-0.5 rounded-full bg-secondary text-white text-[10px]">0</span>
+    </button>
+  </div>
+
+  <!-- Mobile Order Drawer Sheet -->
+  <div id="mobile-cart-sheet" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs hidden transition-opacity">
+    <div class="absolute bottom-0 inset-x-0 bg-surface-container-lowest rounded-t-2xl p-6 space-y-4 max-h-[85vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-surface-container pb-3">
+        <h3 class="font-serif font-bold text-lg text-primary">Your Order Tray</h3>
+        <button onclick="toggleMobileCart(false)" class="p-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div id="mobile-sheet-items" class="divide-y divide-surface-container space-y-2">
+        <!-- Cloned tray items -->
+      </div>
+
+      <button onclick="toggleMobileCart(false); switchTab('checkout');" class="w-full py-3 bg-primary text-on-primary rounded-lg font-bold text-sm shadow-sm">
+        Go to Checkout
+      </button>
+    </div>
+  </div>
+
+  <div id="order-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-surface-container-lowest border border-surface-container-high rounded-2xl p-6 sm:p-8 max-w-md w-full space-y-6 shadow-2xl relative text-center animate-scaleUp">
+      
+      <div class="w-16 h-16 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mx-auto">
+        <span class="material-symbols-outlined text-3xl">done_all</span>
+      </div>
+
+      <div class="space-y-1">
+        <h2 class="text-2xl font-bold font-serif text-primary">Ordine Confermato!</h2>
+        <p class="text-xs text-on-surface-variant">Order #BF-<span id="conf-order-id">8842</span> • Thank you, <span id="conf-cust-name">Marco</span>!</p>
+      </div>
+
+      <!-- Real-Time Oven Progress Tracker -->
+      <div class="bg-surface-container-low p-4 rounded-xl space-y-3 text-left">
+        <div class="flex items-center justify-between text-xs font-bold text-primary">
+          <span>Oven Queue Status</span>
+          <span id="tracker-status-label" class="text-secondary animate-pulse">Baking in Brick Oven</span>
+        </div>
+        
+        <div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+          <div id="tracker-progress-bar" class="h-full bg-secondary transition-all duration-1000" style="width: 65%;"></div>
+        </div>
+
+        <div class="grid grid-cols-3 text-[10px] text-center text-on-surface-variant font-medium pt-1">
+          <span class="text-primary font-bold">1. Order Received</span>
+          <span class="text-primary font-bold">2. Wood Oven (800°F)</span>
+          <span>3. Ready for Pick-Up</span>
+        </div>
+      </div>
+
+      <div class="text-xs space-y-1 text-on-surface-variant border-t border-surface-container pt-3">
+        <p class="font-bold text-primary">Estimated Ready Time: 20 Minutes</p>
+        <p>A confirmation SMS &amp; digital receipt have been sent.</p>
+      </div>
+
+      <button onclick="closeModalAndReset()" class="w-full py-3 bg-primary text-on-primary rounded-lg font-bold text-sm hover:bg-primary-container transition-colors">
+        Back to Bella Forno Home
+      </button>
+    </div>
+  </div>
+
+  <div id="customizer-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-surface-container-lowest rounded-xl p-6 max-w-md w-full space-y-4 shadow-xl text-left border border-surface-container-high">
+      <div class="flex items-start justify-between border-b border-surface-container pb-2">
+        <div>
+          <h3 id="cust-item-title" class="font-serif font-bold text-lg text-primary">Customize Item</h3>
+          <span id="cust-item-price" class="text-xs font-bold text-secondary"></span>
+        </div>
+        <button onclick="closeCustomizer()" class="p-1 rounded-full bg-surface-container hover:bg-surface-container-high">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-on-surface mb-1">Select Dough / Crust Style:</label>
+          <div class="space-y-1">
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-lg cursor-pointer">
+              <input type="radio" name="crust-opt" value="Classic Neapolitan" checked class="accent-primary"/>
+              <span>Classic Neapolitan (48-Hr Fermented)</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-lg cursor-pointer">
+              <input type="radio" name="crust-opt" value="Gluten-Free (+ $2.50)" class="accent-primary"/>
+              <span>Gluten-Free Artisanal Dough (+ $2.50)</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-on-surface mb-1">Extra Toppings &amp; Drizzle:</label>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="flex items-center gap-1.5 p-2 bg-surface-container-low rounded-lg cursor-pointer">
+              <input type="checkbox" value="Extra Buffalo Mozzarella (+ $2.00)" class="topping-chk accent-primary"/>
+              <span>Extra Mozzarella (+ $2)</span>
+            </label>
+            <label class="flex items-center gap-1.5 p-2 bg-surface-container-low rounded-lg cursor-pointer">
+              <input type="checkbox" value="Hot Honey Drizzle (+ $1.50)" class="topping-chk accent-primary"/>
+              <span>Hot Honey (+ $1.50)</span>
+            </label>
+            <label class="flex items-center gap-1.5 p-2 bg-surface-container-low rounded-lg cursor-pointer">
+              <input type="checkbox" value="Fresh Basil &amp; Garlic (+ $1.00)" class="topping-chk accent-primary"/>
+              <span>Fresh Basil (+ $1)</span>
+            </label>
+            <label class="flex items-center gap-1.5 p-2 bg-surface-container-low rounded-lg cursor-pointer">
+              <input type="checkbox" value="Truffle Oil Drizzle (+ $2.00)" class="topping-chk accent-primary"/>
+              <span>Truffle Oil (+ $2)</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="saveCustomization()" class="w-full py-2.5 bg-primary text-on-primary font-bold text-xs rounded-lg hover:bg-primary-container">
+        Add Customized Item to Tray
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // MENU DATA MODEL
+    const MENU_DATA = [
+      {
+        id: "p1",
+        category: "pizza",
+        name: "Pepperoni Pizza",
+        desc: "San Marzano tomato sauce, fresh mozzarella, spicy artisanal Italian pepperoni, wild oregano.",
+        badge: "Popular",
+        badgeColor: "bg-secondary text-white",
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuC4-eCVS1jYuCgdUBZinlM0xOP4RgTwrgVnZY1xkvpcfYVt_XWDy-4y2N_uEf7mmD_Ehjx37L3cfMG9kSXcHkyj5eitI_06Gf4TegfrgPuKY6OMxSFrUpas6PAUUeP0nCbvQloqG0v8hb96BA5ZAz_qePGhpmpgFgsNQr6bmlcoSYSmqRkIvUmoJCpjit2XoFQ8IvPloOWFofExN2HSKjexxGHp1w9CCxZvpjhRGYw-a9Q5FIfZ4_FE",
+        hasSizes: true,
+        sizes: [
+          { label: "Small (10\")", price: 10.00 },
+          { label: "Medium (12\")", price: 15.00 },
+          { label: "Large (16\")", price: 19.95 }
+        ]
+      },
+      {
+        id: "p2",
+        category: "pizza",
+        name: "Classic Cheese / Margherita",
+        desc: "Crushed San Marzano tomatoes, fresh Fior di Latte mozzarella, fragrant basil leaves, extra virgin olive oil.",
+        badge: "Vegetarian",
+        badgeColor: "bg-primary text-white",
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDfC9mbYnkzTjHFUWYvjTgEHuQ_XotrrFis5Ru6dJD5hIjuG5sK9dhpvby0PadKy0131gSa9zyBU7rvj_OWkjXaf0qgZSTOOLIkVIj9_PLSWv5JlKjDLTatad9KkhhVPM_WAiBG_j1mq6NAtKKZAqqBvmKJjhFkwppbYO1GPuq5CYi6Sxi6zh4Rab0MPe6VtlAKFiSkiUkUYpMQXAJEgaodroZ62ButbBMRNuQwsz-ch_CcAIS4ecC6",
+        hasSizes: true,
+        sizes: [
+          { label: "Small (10\")", price: 8.50 },
+          { label: "Medium (12\")", price: 12.50 },
+          { label: "Large (16\")", price: 16.50 }
+        ]
+      },
+      {
+        id: "p3",
+        category: "pizza",
+        name: "Eggplant &amp; Ricotta Pizza",
+        desc: "Roasted Sicilian aubergine, creamy ricotta cheese dollops, tomato sauce, shaved aged parmesan.",
+        badge: "Chef's Pick",
+        badgeColor: "bg-tertiary text-white",
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAr-MBZ7_7RTYhB9YqXh4hBcFxhD8tMCWQUXj79AflvpBCeJNQwaUbtdzW_6WR2TLjmrvL7qHbf9jelCuRQ-mktDWvLnKP2iCK1K_n3FcOwJrbPIKNHVbkHVhlfJyhsxV1KiGh-LJC_6bZzdSBeGIaAQpgSegFkGlU5RbhW0GNDaoifzon7rZTnkg1ax1hNHlwmvN1hoCtezroBIqLhVotNFpYDXMRUbWIkem8C9NHDiH-9xgese7Aq",
+        hasSizes: true,
+        sizes: [
+          { label: "Small (10\")", price: 9.50 },
+          { label: "Medium (12\")", price: 14.00 },
+          { label: "Large (16\")", price: 18.50 }
+        ]
+      },
+      {
+        id: "s1",
+        category: "sides",
+        name: "Rosemary Tuscan Fries",
+        desc: "Hand-cut golden russet potatoes tossed in coarse sea salt and fresh aromatic rosemary.",
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjqOloEzorpxEv5N8DmI5lwUmViDZnKaQBGf02azyg3Fn0N6HtINsh9Obqi028jYbHJ-T1jhlWqO04VjRAqji5VvtpMIrAZmT55Vq6EccV2mw4lBR7TFUc9lNP5uiJrqCWdmZ74wha5a42G8LbLSx-lClXZL5KVXd0ikTHhfA35yBT2R1TSmQQKY8MkkISxyPpBY9nJBJza41-9_wu3m-Pj8YgAc3v8-a3iS0T9aGKh3s8_iN14_ZL",
+        hasSizes: true,
+        sizes: [
+          { label: "Small Side", price: 3.50 },
+          { label: "Large Basket", price: 4.50 }
+        ]
+      },
+      {
+        id: "s2",
+        category: "sides",
+        name: "Greek Trattoria Salad",
+        desc: "Crisp romaine hearts, Kalamata olives, diced cucumbers, red onion rings, herb-dusted feta cheese.",
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD54p_0fuDNMA5PijIVvxcS3gQ80ax_Toh4GBYsDM1z1StUpK7FLxzbNL01xUiBlBEiRrQkGIVIelkpIQ2pvu3ensilN1SJHXRCj1cfJmU1cnwgPwmBRyTtshgwDsbcrtFEIbsGt0-4MX1VMvw0IBfGMCGdPKAeTImeUeDe7f0b1p0S_X0nw3KHXIHQiK3eT8pCPlOLbm9RKxcpGZ2e0VdQNemVWK00EWrBSvbL9Sw_XrbSMn42O0Ry",
+        hasSizes: false,
+        price: 9.25
+      },
+      {
+        id: "d1",
+        category: "drinks",
+        name: "San Pellegrino Blood Orange",
+        desc: "Sparkling Italian citrus soda (330ml can).",
+        hasSizes: false,
+        price: 3.75
+      },
+      {
+        id: "d2",
+        category: "drinks",
+        name: "Italian Craft Blonde Ale",
+        desc: "Crisp, refreshing light ale imported from Lombardy (12oz bottle).",
+        hasSizes: false,
+        price: 7.00
+      },
+      {
+        id: "ds1",
+        category: "dessert",
+        name: "Classic Espresso Tiramisu",
+        desc: "Layered ladyfingers soaked in dark espresso, mascarpone cream, cocoa powder.",
+        hasSizes: false,
+        price: 8.50
+      }
+    ];
+
+    // APPLICATION STATE
+    let cart = []; // { id, name, sizeLabel, price, qty, customNotes }
+    let orderType = 'pickup'; // 'pickup' | 'delivery'
+    let selectedTipPercent = 18;
+    let selectedPayMethod = 'card';
+    let currentCustomizingItem = null;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderMenu();
+      updateTrayUI();
+    });
+
+    // RENDER MENU CARDS
+    function renderMenu(filter = 'all', searchQuery = '') {
+      const categories = ['pizza', 'sides', 'drinks', 'dessert'];
+      
+      categories.forEach(cat => {
+        const container = document.getElementById(`grid-${cat}`);
+        if (!container) return;
+
+        const items = MENU_DATA.filter(item => {
+          const matchesCat = (filter === 'all' || item.category === filter);
+          const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                item.desc.toLowerCase().includes(searchQuery.toLowerCase());
+          return matchesCat && matchesSearch;
+        });
+
+        // Hide empty sections during search
+        const sectionEl = document.getElementById(`section-${cat}`);
+        if (sectionEl) {
+          sectionEl.style.display = items.length ? 'block' : 'none';
+        }
+
+        container.innerHTML = items.map(item => createItemCardHTML(item)).join('');
+      });
+    }
+
+    function createItemCardHTML(item) {
+      let sizeSelectorHTML = '';
+      if (item.hasSizes) {
+        sizeSelectorHTML = `
+          <div class="mt-3 space-y-1">
+            <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Select Size:</span>
+            <div class="flex flex-wrap gap-1.5">
+              ${item.sizes.map((s, idx) => `
+                <button type="button" 
+                        onclick="setItemSize('${item.id}', ${idx})" 
+                        id="btn-size-${item.id}-${idx}" 
+                        class="size-btn-${item.id} px-2.5 py-1 rounded-md text-xs font-semibold border ${idx === 1 || item.sizes.length === 2 && idx === 1 ? 'border-primary bg-primary text-on-primary' : 'border-outline-variant bg-surface-container-low text-on-surface hover:bg-surface-container'} transition-all">
+                  ${s.label} • $${s.price.toFixed(2)}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      const defaultPrice = item.hasSizes ? item.sizes[1]?.price || item.sizes[0].price : item.price;
+
+      return `
+        <div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-4 shadow-2xs hover:shadow-md transition-all flex flex-col sm:flex-row gap-4 relative overflow-hidden group">
+          ${item.img ? `
+            <div class="w-full sm:w-44 h-36 rounded-lg overflow-hidden flex-shrink-0 relative bg-surface-container">
+              <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"/>
+              ${item.badge ? `
+                <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${item.badgeColor}">
+                  ${item.badge}
+                </span>
+              ` : ''}
+            </div>
+          ` : ''}
+
+          <div class="flex flex-col justify-between flex-1 gap-2">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <h3 class="font-serif font-bold text-base text-primary">${item.name}</h3>
+                <span class="font-mono font-bold text-sm text-primary" id="price-display-${item.id}">
+                  $${defaultPrice.toFixed(2)}
+                </span>
+              </div>
+              <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">${item.desc}</p>
+              ${sizeSelectorHTML}
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-surface-container">
+              ${item.category === 'pizza' ? `
+                <button onclick="openCustomizer('${item.id}')" class="text-xs text-secondary font-bold flex items-center gap-1 hover:underline">
+                  <span class="material-symbols-outlined text-[15px]">tune</span>
+                  <span>Customize Toppings</span>
+                </button>
+              ` : '<span></span>'}
+
+              <button onclick="addSelectedToTray('${item.id}')" class="px-4 py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg text-xs font-bold flex items-center gap-1.5 shadow-2xs transition-colors">
+                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                <span>Add to Order</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Track size selection per item in temporary state
+    const selectedSizesState = {};
+
+    function setItemSize(itemId, sizeIdx) {
+      selectedSizesState[itemId] = sizeIdx;
+      
+      // Update UI button styles
+      const item = MENU_DATA.find(i => i.id === itemId);
+      if (!item || !item.hasSizes) return;
+
+      const sizeButtons = document.querySelectorAll(`.size-btn-${itemId}`);
+      sizeButtons.forEach((btn, idx) => {
+        if (idx === sizeIdx) {
+          btn.className = `size-btn-${itemId} px-2.5 py-1 rounded-md text-xs font-semibold border border-primary bg-primary text-on-primary transition-all`;
+        } else {
+          btn.className = `size-btn-${itemId} px-2.5 py-1 rounded-md text-xs font-semibold border border-outline-variant bg-surface-container-low text-on-surface hover:bg-surface-container transition-all`;
+        }
+      });
+
+      // Update displayed price tag
+      const priceDisplay = document.getElementById(`price-display-${itemId}`);
+      if (priceDisplay) {
+        priceDisplay.textContent = `$${item.sizes[sizeIdx].price.toFixed(2)}`;
+      }
+    }
+
+    function addSelectedToTray(itemId) {
+      const item = MENU_DATA.find(i => i.id === itemId);
+      if (!item) return;
+
+      let sizeLabel = "";
+      let price = item.price;
+
+      if (item.hasSizes) {
+        const sizeIdx = selectedSizesState[itemId] !== undefined ? selectedSizesState[itemId] : (item.sizes.length === 3 ? 1 : 1);
+        const selectedSize = item.sizes[sizeIdx];
+        sizeLabel = selectedSize.label;
+        price = selectedSize.price;
+      }
+
+      addToCart({
+        id: item.id,
+        name: item.name,
+        sizeLabel: sizeLabel,
+        price: price,
+        qty: 1,
+        customNotes: ""
+      });
+    }
+
+    function addToCart(newItem) {
+      // Check for matching item with same size & notes
+      const existing = cart.find(i => i.id === newItem.id && i.sizeLabel === newItem.sizeLabel && i.customNotes === newItem.customNotes);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push(newItem);
+      }
+      updateTrayUI();
+    }
+
+    function updateQty(index, delta) {
+      if (cart[index]) {
+        cart[index].qty += delta;
+        if (cart[index].qty <= 0) {
+          cart.splice(index, 1);
+        }
+      }
+      updateTrayUI();
+    }
+
+    function updateTrayUI() {
+      const itemsContainer = document.getElementById('tray-items-list');
+      const emptyState = document.getElementById('tray-empty-state');
+      const checkoutBtn = document.getElementById('checkout-cta-btn');
+      
+      const totalItems = cart.reduce((acc, i) => acc + i.qty, 0);
+      document.getElementById('tray-item-count').textContent = `${totalItems} items`;
+      
+      // Update header badges
+      const badge = document.getElementById('nav-cart-badge');
+      badge.textContent = totalItems;
+      badge.classList.toggle('hidden', totalItems === 0);
+
+      document.getElementById('mobile-cart-badge').textContent = totalItems;
+      document.getElementById('mobile-bar-count').textContent = totalItems;
+
+      if (cart.length === 0) {
+        itemsContainer.innerHTML = '';
+        itemsContainer.appendChild(emptyState);
+        emptyState.classList.remove('hidden');
+        if (checkoutBtn) checkoutBtn.disabled = true;
+      } else {
+        emptyState.classList.add('hidden');
+        if (checkoutBtn) checkoutBtn.disabled = false;
+
+        itemsContainer.innerHTML = cart.map((item, idx) => `
+          <div class="py-2 flex items-center justify-between text-xs gap-2">
+            <div class="flex-1">
+              <div class="font-bold text-primary">${item.name}</div>
+              ${item.sizeLabel ? `<div class="text-[10px] text-on-surface-variant">${item.sizeLabel}</div>` : ''}
+              ${item.customNotes ? `<div class="text-[10px] text-secondary font-medium">${item.customNotes}</div>` : ''}
+              <div class="font-mono text-on-surface font-semibold">$${(item.price * item.qty).toFixed(2)}</div>
+            </div>
+
+            <!-- Stepper Controller -->
+            <div class="flex items-center gap-1 bg-surface-container-low border border-surface-container-high rounded-md p-0.5">
+              <button onclick="updateQty(${idx}, -1)" class="w-6 h-6 flex items-center justify-center rounded hover:bg-surface-container text-primary font-bold">
+                -
+              </button>
+              <span class="w-5 text-center font-bold text-primary">${item.qty}</span>
+              <button onclick="updateQty(${idx}, 1)" class="w-6 h-6 flex items-center justify-center rounded hover:bg-surface-container text-primary font-bold">
+                +
+              </button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Sync Mobile Sheet
+      const mobileSheetContainer = document.getElementById('mobile-sheet-items');
+      if (mobileSheetContainer) {
+        mobileSheetContainer.innerHTML = itemsContainer.innerHTML;
+      }
+
+      calculateTotals();
+    }
+
+    function calculateTotals() {
+      const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+      const deliveryFee = (orderType === 'delivery' && subtotal > 0) ? 3.99 : 0.00;
+      const tax = subtotal * 0.08875;
+      const tip = subtotal * (selectedTipPercent / 100);
+      const grandTotal = subtotal + deliveryFee + tax + tip;
+
+      // Menu Tray Totals
+      document.getElementById('subtotal-val').textContent = `$${subtotal.toFixed(2)}`;
+      document.getElementById('tax-val').textContent = `$${tax.toFixed(2)}`;
+      document.getElementById('total-val').textContent = `$${(subtotal + deliveryFee + tax).toFixed(2)}`;
+      document.getElementById('mobile-bar-total').textContent = `$${(subtotal + deliveryFee + tax).toFixed(2)}`;
+
+      // Checkout View Summary Totals
+      document.getElementById('chk-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+      document.getElementById('chk-tip').textContent = `$${tip.toFixed(2)}`;
+      document.getElementById('chk-tax').textContent = `$${tax.toFixed(2)}`;
+      document.getElementById('chk-grand-total').textContent = `$${grandTotal.toFixed(2)}`;
+
+      // Sync summary list in checkout view
+      const summaryList = document.getElementById('checkout-summary-list');
+      if (summaryList) {
+        summaryList.innerHTML = cart.map(i => `
+          <div class="py-1.5 flex justify-between">
+            <span>${i.qty}x ${i.name} ${i.sizeLabel ? `(${i.sizeLabel})` : ''}</span>
+            <span class="font-mono font-semibold">$${(i.price * i.qty).toFixed(2)}</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    function switchTab(tab) {
+      const menuView = document.getElementById('view-menu');
+      const checkoutView = document.getElementById('view-checkout');
+      const menuBtn = document.getElementById('nav-btn-menu');
+      const checkoutBtn = document.getElementById('nav-btn-checkout');
+
+      if (tab === 'menu') {
+        menuView.classList.remove('hidden');
+        checkoutView.classList.add('hidden');
+        menuBtn.className = "flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all bg-primary text-on-primary shadow-sm";
+        checkoutBtn.className = "flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all text-on-surface-variant hover:text-primary hover:bg-surface-container-high";
+      } else {
+        menuView.classList.add('hidden');
+        checkoutView.classList.remove('hidden');
+        checkoutBtn.className = "flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all bg-primary text-on-primary shadow-sm";
+        menuBtn.className = "flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all text-on-surface-variant hover:text-primary hover:bg-surface-container-high";
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function setOrderType(type) {
+      orderType = type;
+      const pickupBtn = document.getElementById('opt-pickup');
+      const deliveryBtn = document.getElementById('opt-delivery');
+      const deliveryRow = document.getElementById('delivery-fee-row');
+      const addressBlock = document.getElementById('checkout-address-block');
+
+      if (type === 'pickup') {
+        pickupBtn.className = "py-1.5 rounded-md text-center transition-all bg-primary text-on-primary shadow-2xs";
+        deliveryBtn.className = "py-1.5 rounded-md text-center transition-all text-on-surface-variant hover:text-primary";
+        deliveryRow.classList.add('hidden');
+        if (addressBlock) addressBlock.classList.add('hidden');
+      } else {
+        deliveryBtn.className = "py-1.5 rounded-md text-center transition-all bg-primary text-on-primary shadow-2xs";
+        pickupBtn.className = "py-1.5 rounded-md text-center transition-all text-on-surface-variant hover:text-primary";
+        deliveryRow.classList.remove('hidden');
+        deliveryRow.classList.add('flex');
+        if (addressBlock) addressBlock.classList.remove('hidden');
+      }
+      calculateTotals();
+    }
+
+    function setTip(percent) {
+      selectedTipPercent = percent;
+      [15, 18, 20, 0].forEach(p => {
+        const btn = document.getElementById(`tip-${p}`);
+        if (!btn) return;
+        if (p === percent) {
+          btn.className = "tip-btn py-1.5 border-2 border-primary bg-primary/5 rounded-lg font-bold text-primary";
+        } else {
+          btn.className = "tip-btn py-1.5 border border-outline-variant rounded-lg font-bold text-on-surface-variant hover:border-primary";
+        }
+      });
+      calculateTotals();
+    }
+
+    function selectPayMethod(method) {
+      selectedPayMethod = method;
+      ['card', 'apple', 'cash'].forEach(m => {
+        const btn = document.getElementById(`pay-${m}`);
+        if (m === method) {
+          btn.className = "pay-method-btn p-3 border-2 border-primary bg-primary/5 rounded-lg flex flex-col items-center gap-1.5 text-xs font-bold text-primary transition-all";
+        } else {
+          btn.className = "pay-method-btn p-3 border border-outline-variant bg-surface-container-low rounded-lg flex flex-col items-center gap-1.5 text-xs font-semibold text-on-surface-variant transition-all";
+        }
+      });
+
+      const cardFields = document.getElementById('card-fields');
+      if (cardFields) {
+        cardFields.style.display = method === 'card' ? 'block' : 'none';
+      }
+    }
+
+    // FILTER & SEARCH
+    function filterCategory(cat) {
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        btn.className = "cat-pill px-4 py-2 rounded-lg text-xs font-bold whitespace-nowrap bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-all";
+      });
+      const activeBtn = document.getElementById(`cat-${cat}`);
+      if (activeBtn) {
+        activeBtn.className = "cat-pill active px-4 py-2 rounded-lg text-xs font-bold whitespace-nowrap bg-primary text-on-primary shadow-xs transition-all";
+      }
+      renderMenu(cat, document.getElementById('menu-search').value);
+    }
+
+    function handleSearch() {
+      const query = document.getElementById('menu-search').value;
+      renderMenu('all', query);
+    }
+
+    function openCustomizer(itemId) {
+      currentCustomizingItem = MENU_DATA.find(i => i.id === itemId);
+      if (!currentCustomizingItem) return;
+
+      document.getElementById('cust-item-title').textContent = `Customize ${currentCustomizingItem.name}`;
+      document.getElementById('cust-item-price').textContent = `Base $${(currentCustomizingItem.sizes ? currentCustomizingItem.sizes[1].price : currentCustomizingItem.price).toFixed(2)}`;
+      document.getElementById('customizer-modal').classList.remove('hidden');
+    }
+
+    function closeCustomizer() {
+      document.getElementById('customizer-modal').classList.add('hidden');
+      currentCustomizingItem = null;
+    }
+
+    function saveCustomization() {
+      if (!currentCustomizingItem) return;
+
+      const crust = document.querySelector('input[name="crust-opt"]:checked')?.value || "";
+      const toppings = Array.from(document.querySelectorAll('.topping-chk:checked')).map(cb => cb.value);
+
+      const notes = [crust, ...toppings].filter(Boolean).join(' • ');
+
+      const basePrice = currentCustomizingItem.sizes ? currentCustomizingItem.sizes[1].price : currentCustomizingItem.price;
+
+      addToCart({
+        id: currentCustomizingItem.id,
+        name: currentCustomizingItem.name,
+        sizeLabel: currentCustomizingItem.sizes ? "Medium (12\")" : "",
+        price: basePrice,
+        qty: 1,
+        customNotes: notes
+      });
+
+      closeCustomizer();
+    }
+
+    function submitOrder() {
+      if (cart.length === 0) {
+        alert("Your tray is empty! Please add items before placing an order.");
+        return;
+      }
+
+      const firstName = document.getElementById('cust-first').value || "Guest";
+      document.getElementById('conf-cust-name').textContent = firstName;
+      document.getElementById('conf-order-id').textContent = Math.floor(1000 + Math.random() * 9000);
+
+      // Open Confirmation Modal
+      document.getElementById('order-modal').classList.remove('hidden');
+    }
+
+    function closeModalAndReset() {
+      document.getElementById('order-modal').classList.add('hidden');
+      cart = [];
+      updateTrayUI();
+      switchTab('menu');
+    }
+
+    function toggleMobileCart(show) {
+      const sheet = document.getElementById('mobile-cart-sheet');
+      if (show) {
+        sheet.classList.remove('hidden');
+      } else {
+        sheet.classList.add('hidden');
+      }
+    }
+
+    function toggleAssistanceModal() {
+      const name = prompt("Need help with your order? Enter your callback phone number:");
+      if (name) {
+        const toast = document.createElement('div');
+        toast.className = "fixed bottom-6 right-6 z-50 bg-primary text-white text-xs font-bold px-4 py-3 rounded-lg shadow-xl animate-bounce";
+        toast.textContent = "✓ A team member will call you shortly!";
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 4000);
+      }
+    }
+  </script>
+</body>
+</html>
